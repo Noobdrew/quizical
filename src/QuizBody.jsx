@@ -4,35 +4,33 @@ import { decode } from "html-entities";
 import { nanoid } from "nanoid";
 
 export default function QuizBody(props) {
-  const [allQuestions, setAllQuestions] = useState([props.apiData]);
-  const [quiestion, setQuestion] = useState(props.apiData[0]);
+  const [allQuestions, setAllQuestions] = useState(props.apiData);
 
   useEffect(() => {
-    allQuestions.map;
-  }, []);
-
-  useEffect(() => {
-    console.log("change question");
-    setQuestion((prev) => {
-      return {
-        ...prev,
-        id: nanoid(),
-        allAnswers: prev.incorrect_answers.toSpliced(
-          (3 * Math.random()) | 0,
-          0,
-          prev.correct_answer
-        ),
-      };
+    console.log("use effect");
+    setAllQuestions((prev) => {
+      return prev.map((question) => {
+        return {
+          ...question,
+          id: nanoid(),
+        };
+      });
     });
-    console.log(quiestion);
   }, []);
 
-  console.log(allQuestions);
+  const quizElements = allQuestions.map((question) => {
+    return (
+      <QuizElement
+        key={question.id}
+        questionText={question.question}
+        question={question}
+      />
+    );
+  });
+
   return (
     <div className="quiz-body">
-      <div className="quiz-container">
-        <QuizElement questionText={quiestion.question} />
-      </div>
+      <div className="quiz-container">{quizElements}</div>
     </div>
   );
 }
