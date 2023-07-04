@@ -1,17 +1,14 @@
 import { useState } from "react";
 import Quiz from "./Quiz";
 import "./App.css";
-import { decode } from "html-entities";
-// fetch("https://opentdb.com/api.php?amount=5")
-//   .then((resp) => resp.json())
-//   .then((data) => console.log(data));
+import QuizBody from "./QuizBody";
+
 function App() {
   const [quiz, setQuiz] = useState(false);
-  return (
-    <div>
-      <Quiz />
-    </div>
-  );
+  function startQuiz() {
+    setQuiz(true);
+  }
+  return <div>{quiz ? <QuizBody /> : <Quiz startQuiz={startQuiz} />}</div>;
 }
 
 export default App;
