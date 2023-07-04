@@ -31,6 +31,7 @@ export default function QuizBody(props) {
   return (
     <div className="quiz-body">
       <div className="quiz-container">{quizElements}</div>
+      <button className="check-answers">Check answers</button>
     </div>
   );
 }
