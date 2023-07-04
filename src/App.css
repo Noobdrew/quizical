@@ -1,42 +1,62 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+body {
+  margin: 0;
+  font-family: 'inter', sans-serif;
+  background: no-repeat url('./assets/blob5.png') right 0,
+    no-repeat url('./assets/blobs.png') left 0 bottom 0, #F5F7FB;
+  height: 100vh;
+  overflow: hidden;
+
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.start-screen {
+  padding-top: 35vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.title {
+  color: #293264;
+  font-size: 31px;
+  line-height: 35px;
+  font-weight: 700;
 }
 
-.card {
-  padding: 2em;
+.sub-title {
+  color: #293264;
+  font-size: 16px;
+  line-height: 19px;
+  font-weight: 400;
 }
 
-.read-the-docs {
-  color: #888;
+.start-quiz {
+  width: 200px;
+  height: 50px;
+  border: none;
+  background-color: #4D5B9E;
+  color: #F5F7FB;
+  font-family: 'inter';
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 15px;
+}
+
+.start-quiz:hover {
+  background-color: #3e4a88;
+}
+
+.start-quiz:active {
+  box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
 }
