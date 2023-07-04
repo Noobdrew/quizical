@@ -138,56 +138,51 @@ ul>li {
   color: #293264;
 }
 
-input[type="radio"] {
-  opacity: 0;
-  position: fixed;
-  width: 0;
-}
 
-label {
+/* 
+.answer-button {
+  border: none;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 30px;
-  text-align: center;
-  background-color: transparent;
-  padding: 10px;
-  font-family: 'inter', sans-serif;
-  font-size: 15px;
+  padding: 15px;
+  height: 35px;
   outline: 2px solid #4D5B9E;
+  background-color: transparent;
   border-radius: 15px;
+  min-width: 50px;
+  font-weight: 500;
+  color: #293264;
+  font-family: 'inter', sans-serif;
+  transition: all 0.2s ease-in-out;
 }
 
-input[type="radio"]:checked+label {
-  background-color: #D6DBF5;
+.answer-button:hover {
   outline: none;
+  background-color: #D6DBF5;
 }
 
-input[type="radio"]:hover+label {
+.answer-button.active {
   outline: none;
   background-color: #D6DBF5;
 }
 
-
-.correct+label {
+.answer-button.correct {
   background-color: #94D7A2;
   outline: none;
-  pointer-events: none;
-}
+} */
 
-.wrong+label {
+/* .answer-button.wrong {
   opacity: 0.75;
   background-color: #F8BCBC;
   outline: none;
-  pointer-events: none;
-}
+} */
 
 
 
 @media (max-width:950px) {
   body {
     overflow: auto;
-    overflow-x: hidden;
   }
 
   .quiz-element {
@@ -197,14 +192,13 @@ input[type="radio"]:hover+label {
     width: 90%;
   }
 
-  label {
+
+  /* .answer-button {
     padding: 2px;
     height: 50px;
     min-width: 50px;
     line-height: 13px;
 
     text-overflow: ellipsis;
-  }
-
-
+  } */
 }
