@@ -1,36 +1,48 @@
 import { decode } from "html-entities";
 
 export default function QuizElement(props) {
-  const allAnswers = props.question.incorrect_answers.toSpliced(
-    (3 * Math.random()) | 0,
-    0,
-    props.question.correct_answer
-  );
-  console.log(props.question);
   return (
     <>
       <div className="quiz-element">
         <h3 className="question">{decode(props.questionText)}</h3>
         <ul className="answers">
           <li>
-            <input type="radio" name={props.question.question} id="answer1" />
-            <label htmlFor="answer1"></label>
-            <button className="answer-button active">
-              {decode(allAnswers[0])}
-            </button>
+            <input
+              type="radio"
+              name={props.question.question}
+              id={props.answer[0]}
+              value={props.answer[0]}
+              className="answer-button "
+            />
+            <label htmlFor={props.answer[0]}> {decode(props.answer[0])}</label>
           </li>
           <li>
-            <button className="answer-button correct">
-              {decode(allAnswers[1])}
-            </button>
+            <input
+              type="radio"
+              name={props.question.question}
+              value={props.answer[1]}
+              id={props.answer[1]}
+              className="answer-button "
+            />
+            <label htmlFor={props.answer[1]}> {decode(props.answer[1])}</label>
           </li>
           <li>
-            <button className="answer-button wrong">
-              {decode(allAnswers[2])}
-            </button>
+            <input
+              type="radio"
+              name={props.question.question}
+              id={props.answer[2]}
+              className="answer-button "
+            />
+            <label htmlFor={props.answer[2]}> {decode(props.answer[2])}</label>
           </li>
           <li>
-            <button className="answer-button">{decode(allAnswers[3])}</button>
+            <input
+              type="radio"
+              name={props.question.question}
+              id={props.answer[3]}
+              className="answer-button active"
+            />
+            <label htmlFor={props.answer[3]}> {decode(props.answer[3])}</label>
           </li>
         </ul>
       </div>
