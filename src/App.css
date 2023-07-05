@@ -158,24 +158,24 @@ label {
   border-radius: 15px;
 }
 
-input[type="radio"]:checked+label {
+input:checked+label {
   background-color: #D6DBF5;
   outline: none;
 }
 
-input[type="radio"]:hover+label {
+input:hover+label {
   outline: none;
   background-color: #D6DBF5;
 }
 
 
-.correct+label {
+input[type='radio'].correct+label {
   background-color: #94D7A2;
   outline: none;
   pointer-events: none;
 }
 
-.wrong+label {
+input[type='radio'].wrong+label {
   opacity: 0.75;
   background-color: #F8BCBC;
   outline: none;

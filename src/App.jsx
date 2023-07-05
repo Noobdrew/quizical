@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Quiz from "./Quiz";
 import "./App.css";
 import QuizBody from "./QuizBody";
+import { nanoid } from "nanoid";
 
 function App() {
   const [quiz, setQuiz] = useState(false);
@@ -10,6 +11,19 @@ function App() {
 
   async function startQuiz() {
     setQuiz(true);
+    setAipData((prev) => {
+      return prev.map((question) => {
+        return {
+          ...question,
+          id: nanoid(),
+          allAnswers: question.incorrect_answers.toSpliced(
+            (3 * Math.random()) | 0,
+            0,
+            question.correct_answer
+          ),
+        };
+      });
+    });
   }
 
   useEffect(() => {
