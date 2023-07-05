@@ -1,15 +1,7 @@
 import { decode } from "html-entities";
 import Answer from "./Answer";
-import { useState } from "react";
 
 export default function QuizElement(props) {
-  const [selected, setSelected] = useState();
-
-  function handleChange(value, index) {
-    props.setAnswer(value, props.id);
-    setSelected(index);
-  }
-
   return (
     <>
       <div className="quiz-element">

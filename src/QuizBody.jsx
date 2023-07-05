@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react";
 import QuizElement from "./QuizElement";
-import { decode } from "html-entities";
-import { nanoid } from "nanoid";
 
 export default function QuizBody(props) {
   const [checkAnswers, setCheckAnswers] = useState(false);
