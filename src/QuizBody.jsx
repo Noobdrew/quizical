@@ -8,9 +8,7 @@ export default function QuizBody(props) {
   const quizElements = props.apiData.map((question) => {
     return (
       <QuizElement
-        correct={question.correct_answer}
         key={question.id}
-        id={question.id}
         questionText={question.question}
         question={question}
         answer={question.allAnswers}
@@ -22,9 +20,7 @@ export default function QuizBody(props) {
   return (
     <div className="quiz-body">
       <div className="quiz-container">{quizElements}</div>
-      <button className="check-answers" onClick={checkAnswers}>
-        Check answers
-      </button>
+      <button className="check-answers">Check answers</button>
     </div>
   );
 }

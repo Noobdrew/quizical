@@ -1,5 +1,4 @@
 import { decode } from "html-entities";
-import { useState } from "react";
 
 export default function QuizElement(props) {
   return (
