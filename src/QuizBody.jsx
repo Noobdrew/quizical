@@ -4,11 +4,8 @@ import { decode } from "html-entities";
 import { nanoid } from "nanoid";
 
 export default function QuizBody(props) {
-  const [selectedAnswers, setSelectedAnswers] = useState([1, 2, 3, 4, 5]);
-  const [allQuestions, setAllQuestions] = useState(props.apiData);
-
-  console.log(allQuestions);
-  const quizElements = allQuestions.map((question) => {
+  console.log(props.apiData);
+  const quizElements = props.apiData.map((question) => {
     return (
       <QuizElement
         correct={question.correct_answer}
@@ -17,12 +14,9 @@ export default function QuizBody(props) {
         questionText={question.question}
         question={question}
         answer={question.allAnswers}
-        setAnswer={setAnswer}
       />
     );
   });
-
-  function setAnswer(selected, id) {}
 
   function checkAnswers() {}
   return (
