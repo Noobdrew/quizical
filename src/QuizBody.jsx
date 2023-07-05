@@ -7,7 +7,6 @@ export default function QuizBody(props) {
   const [checkAnswers, setCheckAnswers] = useState(false);
   const [allQuestions, setAllQuestions] = useState(props.apiData);
 
-  console.log(allQuestions);
   const quizElements = allQuestions.map((question) => {
     return (
       <QuizElement
@@ -31,9 +30,8 @@ export default function QuizBody(props) {
       return prev.map((question) => {
         if (question.id == id) {
           let correct = question.correct_answer;
-          console.log(correct);
+
           if (correct == selected) {
-            console.log("you are right");
           }
           return {
             ...question,
@@ -48,12 +46,26 @@ export default function QuizBody(props) {
       });
     });
   }
-
+  function handleClick() {
+    for (let i = 0; i < allQuestions.length; i++) {
+      const element = allQuestions[i];
+      if (element.selected == "") {
+        alert("Select all your answers");
+        return;
+      }
+    }
+    setCheckAnswers(true);
+    if (checkAnswers) {
+      props.getNewQuestions();
+      props.setQuiz(false);
+      setCheckAnswers(false);
+    }
+  }
   return (
     <div className="quiz-body">
       <div className="quiz-container">{quizElements}</div>
-      <button className="check-answers" onClick={() => setCheckAnswers(true)}>
-        Check answers
+      <button className="check-answers" onClick={handleClick}>
+        {checkAnswers ? "Play Again" : "Check Answers"}
       </button>
     </div>
   );

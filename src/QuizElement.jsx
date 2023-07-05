@@ -10,7 +10,6 @@ export default function QuizElement(props) {
     setSelected(index);
   }
 
-  console.log(props.answer.indexOf(props.slected));
   return (
     <>
       <div className="quiz-element">
